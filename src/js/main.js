@@ -1,53 +1,28 @@
-let selectedValue = '0';
-let secondSelectedValue = '0'
-let selectedOperation = null;
+// set event listeners
 
-const valSpan = document.getElementById("value");
-const opertaionSpan = document.getElementById("operation");
+const numberBtns = document.getElementsByClassName("numberBTN")
+const resultBtn = document.getElementById("resultBtn")
+const deleteBtn = document.getElementById("deleteBtn")
+const operationBTN = document.getElementsByClassName("operationBTN")
 
-function setValue(val) {
-  if(selectedOperation) {
-    if (secondSelectedValue === '0') {
-      secondSelectedValue = val;
-    } else {
-      secondSelectedValue = secondSelectedValue + val;
-    }
-    valSpan.innerHTML = secondSelectedValue
-  } else {
-    if (selectedValue === '0') {
-      selectedValue = val;
-    } else {
-      selectedValue = selectedValue + val;
-    }
-    valSpan.innerHTML = selectedValue
-  }
-}
+Array(...numberBtns).forEach(element => {
+  const numberVal = element.innerHTML
+  element.addEventListener('click', () => {
+    setValue(numberVal)
+  })
+});
 
-function setOperation(op) {
-  selectedOperation = op
-  let res = getOperationString(op);
-  
-  opertaionSpan.innerHTML = res
-  valSpan.innerHTML = '0'
-}
+resultBtn.addEventListener('click', () => {
+  getResult()
+})
 
-function getResult() {
-  let res = getOperationResult(selectedOperation, selectedValue, secondSelectedValue)
-  selectedValue = '0';
-  secondSelectedValue = '0'
-  selectedOperation = null;
-  opertaionSpan.innerHTML = ''
-  valSpan.innerHTML = res + ''
-}
+deleteBtn.addEventListener('click', () => {
+  deleteChar()
+})
 
-function deleteChar() {
-  if (selectedOperation) {
-    let res = deleteLast(secondSelectedValue)
-    secondSelectedValue = res;
-    valSpan.innerHTML = res + ''  
-  } else {
-    let res = deleteLast(selectedValue)
-    selectedValue = res;
-    valSpan.innerHTML = res + ''  
-  }
-}
+Array(...operationBTN).forEach(element => {
+  const op = element.innerHTML
+  element.addEventListener('click', () => {
+    setOperation(op)
+  })
+});

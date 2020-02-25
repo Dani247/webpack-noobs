@@ -1,16 +1,16 @@
 function getOperationResult(selectedOperation, selectedValue, secondSelectedValue) {
   let res = 0;
   switch (selectedOperation) {
-    case 'add':
+    case '+':
       res = parseFloat(selectedValue, 10) + parseFloat(secondSelectedValue, 10)
       break;
-    case 'substract':
+    case '-':
       res = parseFloat(selectedValue, 10) - parseFloat(secondSelectedValue, 10)
       break;
-    case 'mutiply':
+    case 'x':
       res = parseFloat(selectedValue, 10) * parseFloat(secondSelectedValue, 10)
       break;
-    case 'divide':
+    case '/':
       res = parseFloat(selectedValue, 10) / parseFloat(secondSelectedValue, 10)
       break;
     default:
@@ -24,22 +24,22 @@ function deleteLast(string) {
   if (string.length === 1) {
     return '0'
   }
-  return string.substr(0, string.length - 1)
+  return string.substring(0, string.length - 1)
 }
 
 function getOperationString(op) {
   let res = ''
   switch (op) {
-    case 'add':
+    case '+':
       res = selectedValue + ' +'
       break;
-    case 'substract':
+    case '-':
       res = selectedValue + ' -'
       break;
-    case 'mutiply':
+    case 'x':
       res = selectedValue + ' x'
       break;
-    case 'divide':
+    case '/':
       res = selectedValue + ' /'
       break;
   }
