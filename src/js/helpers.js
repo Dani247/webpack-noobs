@@ -27,7 +27,7 @@ function deleteLast(string) {
   return string.substring(0, string.length - 1)
 }
 
-function getOperationString(op) {
+function getOperationString(op, selectedValue) {
   let res = ''
   switch (op) {
     case '+':

@@ -25,7 +25,7 @@ function setValue(val) {
 
 function setOperation(op) {
   selectedOperation = op
-  let res = getOperationString(op);
+  let res = getOperationString(op, selectedValue);
   
   opertaionSpan.innerHTML = res
   valSpan.innerHTML = '0'
