@@ -1,3 +1,5 @@
+import { deleteLast, getOperationResult, getOperationString } from './helpers'
+
 let selectedValue = '0';
 let secondSelectedValue = '0'
 let selectedOperation = null;
@@ -5,7 +7,7 @@ let selectedOperation = null;
 const valSpan = document.getElementById("value");
 const opertaionSpan = document.getElementById("operation");
 
-function setValue(val) {
+export function setValue(val) {
   if(selectedOperation) {
     if (secondSelectedValue === '0') {
       secondSelectedValue = val;
@@ -23,15 +25,15 @@ function setValue(val) {
   }
 }
 
-function setOperation(op) {
+export function setOperation(op) {
   selectedOperation = op
-  let res = getOperationString(op);
+  let res = getOperationString(op, selectedValue);
   
   opertaionSpan.innerHTML = res
   valSpan.innerHTML = '0'
 }
 
-function getResult() {
+export function getResult() {
   let res = getOperationResult(selectedOperation, selectedValue, secondSelectedValue)
   selectedValue = '0';
   secondSelectedValue = '0'
@@ -40,7 +42,7 @@ function getResult() {
   valSpan.innerHTML = res + ''
 }
 
-function deleteChar() {
+export function deleteChar() {
   if (selectedOperation) {
     let res = deleteLast(secondSelectedValue)
     secondSelectedValue = res;

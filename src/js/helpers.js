@@ -1,4 +1,4 @@
-function getOperationResult(selectedOperation, selectedValue, secondSelectedValue) {
+export function getOperationResult(selectedOperation, selectedValue, secondSelectedValue) {
   let res = 0;
   switch (selectedOperation) {
     case '+':
@@ -20,14 +20,14 @@ function getOperationResult(selectedOperation, selectedValue, secondSelectedValu
   return res;
 }
 
-function deleteLast(string) {
+export function deleteLast(string) {
   if (string.length === 1) {
     return '0'
   }
   return string.substring(0, string.length - 1)
 }
 
-function getOperationString(op) {
+export function getOperationString(op, selectedValue) {
   let res = ''
   switch (op) {
     case '+':
