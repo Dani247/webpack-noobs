@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./src/css/buttons.css">
+  <link rel="stylesheet" href="./src/css/display.css">
+  <link rel="stylesheet" href="./src/css/operators.css">
+</head>
+<body>
+ <div id="App">
+  <h2>WEBPACK EXAMPLE</h2>
+
+  <div class="operationDisplay">
+    <span id="operation"></span>
+  </div>
+  <div class="display">
+    <span id="value">0</span>
+  </div>
+
+  <div class="numberButtons">
+    <div onclick="setValue('7')">7</div>
+    <div onclick="setValue('8')">8</div>
+    <div onclick="setValue('9')">9</div>
+    <div onclick="setValue('4')">4</div>
+    <div onclick="setValue('5')">5</div>
+    <div onclick="setValue('6')">6</div>
+    <div onclick="setValue('1')">1</div>
+    <div onclick="setValue('2')">2</div>
+    <div onclick="setValue('3')">3</div>
+    <div id="deleteBtn" onclick="deleteChar()"> delete </div>
+    <div onclick="setValue('0')">0</div>
+    <div id="resultBtn" onclick="getResult()"> = </div>
+  </div>
+
+  <div class="operationButtons">
+    <div onclick="setOperation('add')">+</div>
+    <div onclick="setOperation('substract')">-</div>
+    <div onclick="setOperation('mutiply')">X</div>
+    <div onclick="setOperation('divide')">/</div>
+  </div>
+ </div>
+</body>
+
+<script src="./src/js/helpers.js"></script>
+<script src="./src/js/main.js"></script>
+</html>

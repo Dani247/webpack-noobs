@@ -1,0 +1,21 @@
+.operationButtons {
+  height: 100px;
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.operationButtons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #bad3ff;
+}
+
+.operationButtons div:hover {
+  background-color: antiquewhite;
+  cursor: pointer;
+}
